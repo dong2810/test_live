@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct LoginView: View {
+	private var image: String
+	private var title: String
+	private var placeholder: String
+	@State private var textField: String
+
+	// MARK: - Init
+
+	public init(image: String, title: String, placeholder: String, textField: String) {
+		self.image = image
+		self.title = title
+		self.placeholder = placeholder
+		self.textField = textField
+	}
+
+	// MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		HStack {
+			
+		}
     }
 }
 

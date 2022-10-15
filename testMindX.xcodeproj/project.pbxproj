@@ -15,6 +15,7 @@
 		09A7DD7A28F7C76C00DA39E9 /* testMindX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09A7DD7828F7C76C00DA39E9 /* testMindX.xcdatamodeld */; };
 		09A7DD8128F7C8BF00DA39E9 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7DD8028F7C8BF00DA39E9 /* Register.swift */; };
 		09A7DD8528F7CC6800DA39E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7DD8428F7CC6800DA39E9 /* LoginView.swift */; };
+		F564084C28FB08120022132A /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F564084B28FB08120022132A /* TextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		09A7DD7928F7C76C00DA39E9 /* testMindX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = testMindX.xcdatamodel; sourceTree = "<group>"; };
 		09A7DD8028F7C8BF00DA39E9 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		09A7DD8428F7CC6800DA39E9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F564084B28FB08120022132A /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = ../../../LogoApp/TextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		09A7DD8328F7CBC800DA39E9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F564084B28FB08120022132A /* TextField.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				09A7DD8528F7CC6800DA39E9 /* LoginView.swift in Sources */,
 				09A7DD7728F7C76C00DA39E9 /* Persistence.swift in Sources */,
 				09A7DD7028F7C76A00DA39E9 /* ContentView.swift in Sources */,
+				F564084C28FB08120022132A /* TextField.swift in Sources */,
 				09A7DD7A28F7C76C00DA39E9 /* testMindX.xcdatamodeld in Sources */,
 				09A7DD6E28F7C76A00DA39E9 /* testMindXApp.swift in Sources */,
 				09A7DD8128F7C8BF00DA39E9 /* Register.swift in Sources */,
