@@ -8,26 +8,47 @@
 import SwiftUI
 
 struct LoginView: View {
-	private var image: String
-	private var title: String
-	private var placeholder: String
-	@State private var textField: String
-
-	// MARK: - Init
-
-	public init(image: String, title: String, placeholder: String, textField: String) {
-		self.image = image
-		self.title = title
-		self.placeholder = placeholder
-		self.textField = textField
-	}
-
+    @State private var email: String = ""
+    @State private var password: String = ""
+    @State private var isForgot: Bool = false
+    
 	// MARK: - Body
     var body: some View {
-		HStack {
-			
-		}
+        VStack(alignment: .leading, spacing: 10) {
+            header
+            inputView
+            
+        }
+        .padding(.horizontal, 16)
     }
+}
+
+extension LoginView {
+    var header: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Welcome Back !")
+                .font(.system(size: 20))
+                .bold()
+                .foregroundColor(Color.black)
+            Text("Sign in to Continue")
+                .font(.system(size: 15))
+                .foregroundColor(Color.black)
+        }
+    }
+    
+    var inputView: some View {
+        VStack(spacing: 5) {
+            TextFieldCommon(image: "ic_mail", title: "", placeholder: "Email", text: $email)
+            SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Password", text: $password)
+            Button {
+                isForgot.toggle()
+            } label: {
+                Text("Forgot password?")
+            }
+
+        }
+    }
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
