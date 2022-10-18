@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0922626328FD0C0800ADF609 /* SecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922626228FD0C0800ADF609 /* SecureField.swift */; };
+		0922626528FE544B00ADF609 /* ButtonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922626428FE544B00ADF609 /* ButtonLogin.swift */; };
+		0922626928FE635100ADF609 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0922626828FE635100ADF609 /* Realm */; };
+		0922626B28FE635100ADF609 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0922626A28FE635100ADF609 /* RealmSwift */; };
 		09A7DD6E28F7C76A00DA39E9 /* testMindXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7DD6D28F7C76A00DA39E9 /* testMindXApp.swift */; };
 		09A7DD7028F7C76A00DA39E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7DD6F28F7C76A00DA39E9 /* ContentView.swift */; };
 		09A7DD7228F7C76C00DA39E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A7DD7128F7C76C00DA39E9 /* Assets.xcassets */; };
@@ -21,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		0922626228FD0C0800ADF609 /* SecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureField.swift; sourceTree = "<group>"; };
+		0922626428FE544B00ADF609 /* ButtonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLogin.swift; sourceTree = "<group>"; };
 		09A7DD6A28F7C76A00DA39E9 /* testMindX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testMindX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A7DD6D28F7C76A00DA39E9 /* testMindXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testMindXApp.swift; sourceTree = "<group>"; };
 		09A7DD6F28F7C76A00DA39E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,17 +42,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0922626B28FE635100ADF609 /* RealmSwift in Frameworks */,
+				0922626928FE635100ADF609 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0922626628FE616500ADF609 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		09A7DD6128F7C76A00DA39E9 = {
 			isa = PBXGroup;
 			children = (
 				09A7DD6C28F7C76A00DA39E9 /* testMindX */,
 				09A7DD6B28F7C76A00DA39E9 /* Products */,
+				0922626628FE616500ADF609 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +111,7 @@
 			children = (
 				09A7DD8628FCF7AB00DA39E9 /* TextField.swift */,
 				0922626228FD0C0800ADF609 /* SecureField.swift */,
+				0922626428FE544B00ADF609 /* ButtonLogin.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -117,6 +132,10 @@
 			dependencies = (
 			);
 			name = testMindX;
+			packageProductDependencies = (
+				0922626828FE635100ADF609 /* Realm */,
+				0922626A28FE635100ADF609 /* RealmSwift */,
+			);
 			productName = testMindX;
 			productReference = 09A7DD6A28F7C76A00DA39E9 /* testMindX.app */;
 			productType = "com.apple.product-type.application";
@@ -145,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 09A7DD6128F7C76A00DA39E9;
+			packageReferences = (
+				0922626728FE635100ADF609 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 09A7DD6B28F7C76A00DA39E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -178,6 +200,7 @@
 				09A7DD7A28F7C76C00DA39E9 /* testMindX.xcdatamodeld in Sources */,
 				09A7DD6E28F7C76A00DA39E9 /* testMindXApp.swift in Sources */,
 				09A7DD8128F7C8BF00DA39E9 /* Register.swift in Sources */,
+				0922626528FE544B00ADF609 /* ButtonLogin.swift in Sources */,
 				0922626328FD0C0800ADF609 /* SecureField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +404,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0922626728FE635100ADF609 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0922626828FE635100ADF609 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0922626728FE635100ADF609 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		0922626A28FE635100ADF609 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0922626728FE635100ADF609 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		09A7DD7828F7C76C00DA39E9 /* testMindX.xcdatamodeld */ = {
