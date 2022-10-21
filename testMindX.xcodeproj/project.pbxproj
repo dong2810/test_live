@@ -77,6 +77,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0922629229024F2100ADF609 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		09A7DD6128F7C76A00DA39E9 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +104,7 @@
 		09A7DD6C28F7C76A00DA39E9 /* testMindX */ = {
 			isa = PBXGroup;
 			children = (
+				0922629229024F2100ADF609 /* Utils */,
 				0922628928FFDDC200ADF609 /* Model */,
 				0922628628FFB88000ADF609 /* Home */,
 				09A7DD8328F7CBC800DA39E9 /* Common */,

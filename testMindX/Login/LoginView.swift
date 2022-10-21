@@ -13,6 +13,7 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var isForgot: Bool = false
     @State private var isNext: Bool = false
+    @State private var isRegister: Bool = false
     
 	// MARK: - Body
     var body: some View {
@@ -20,6 +21,7 @@ struct LoginView: View {
             header
             inputView
             signInButton
+            registerButton
         }
         .padding(.horizontal, 16)
     }
@@ -60,12 +62,27 @@ extension LoginView {
         } label: {
             Text("SIGN IN")
                 .foregroundColor(Color.white)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .frame(maxWidth: .infinity, maxHeight: 40)
         .background(Color.black)
         .cornerRadius(5)
     }
 
+    var registerButton: some View {
+        HStack {
+            Text("Don't have an Account?")
+            NavigationLink(destination: RegisterView(), isActive: $isRegister) {
+                Button("Create now") {
+                    isRegister.toggle()
+                }
+            }
+            
+
+        }
+        .frame(maxWidth: .infinity, alignment: .trailing)
+        .font(.system(size: 15))
+    }
 }
 
 struct LoginView_Previews: PreviewProvider {

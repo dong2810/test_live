@@ -18,9 +18,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-			VStack {
-				Text("123")
-			}
+			LoginView()
         }
     }
 }

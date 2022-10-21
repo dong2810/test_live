@@ -8,6 +8,14 @@
 import Foundation
 import RealmSwift
 
-final class Group: Object, ObjectKeyIdentifiable {
+final class UserModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var username: String
+    @Persisted var fullname: String
+    @Persisted var email: String
+    @Persisted var password: String
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }

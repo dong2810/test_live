@@ -7,14 +7,27 @@
 
 import SwiftUI
 
-struct Register: View {
+struct RegisterView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct Register_Previews: PreviewProvider {
+struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        Register()
+        RegisterView()
+    }
+}
+
+extension RegisterView {
+    var header: some View {
+        HStack {
+            Button {
+                <#code#>
+            } label: {
+                <#code#>
+            }
+
+        }
     }
 }
