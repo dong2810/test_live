@@ -6,10 +6,24 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ListUserView: View {
+    @ObservedResults(UserModel.self) var userLists
+    @State private var isPresented: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if userLists.isEmpty {
+                Text("No user lists!")
+            }
+            
+            List {
+                ForEach(userLists, id: \.id) { userList in
+                    Text(userList.username)
+                }.onDelete(perform: $userLists.remove)
+            }
+        }
     }
 }
 

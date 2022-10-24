@@ -23,6 +23,7 @@ struct LoginView: View {
             signInButton
             registerButton
         }
+        .navigationBarBackButtonHidden(true)
         .padding(.horizontal, 16)
     }
 }
@@ -57,16 +58,18 @@ extension LoginView {
     }
     
     var signInButton: some View {
-        Button {
-            isNext.toggle()
-        } label: {
-            Text("SIGN IN")
-                .foregroundColor(Color.white)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        NavigationLink(destination: ListUserView(), isActive: $isNext) {
+            Button {
+                isNext.toggle()
+            } label: {
+                Text("SIGN IN")
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            .frame(maxWidth: .infinity, maxHeight: 40)
+            .background(Color.black)
+            .cornerRadius(5)
         }
-        .frame(maxWidth: .infinity, maxHeight: 40)
-        .background(Color.black)
-        .cornerRadius(5)
     }
 
     var registerButton: some View {

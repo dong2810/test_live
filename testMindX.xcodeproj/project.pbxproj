@@ -13,6 +13,7 @@
 		0922628B28FFDE9200ADF609 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922628A28FFDE9200ADF609 /* UserModel.swift */; };
 		0922628F290158C300ADF609 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0922628E290158C300ADF609 /* Realm */; };
 		09226291290158C300ADF609 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 09226290290158C300ADF609 /* RealmSwift */; };
+		092262942906447300ADF609 /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092262932906447300ADF609 /* Migrator.swift */; };
 		09A7DD6E28F7C76A00DA39E9 /* testMindXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7DD6D28F7C76A00DA39E9 /* testMindXApp.swift */; };
 		09A7DD7028F7C76A00DA39E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7DD6F28F7C76A00DA39E9 /* ContentView.swift */; };
 		09A7DD7228F7C76C00DA39E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A7DD7128F7C76C00DA39E9 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		0922626428FE544B00ADF609 /* ButtonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLogin.swift; sourceTree = "<group>"; };
 		0922628728FFB8B200ADF609 /* ListUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserView.swift; sourceTree = "<group>"; };
 		0922628A28FFDE9200ADF609 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		092262932906447300ADF609 /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
 		09A7DD6A28F7C76A00DA39E9 /* testMindX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testMindX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A7DD6D28F7C76A00DA39E9 /* testMindXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testMindXApp.swift; sourceTree = "<group>"; };
 		09A7DD6F28F7C76A00DA39E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		0922629229024F2100ADF609 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				092262932906447300ADF609 /* Migrator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				09A7DD8528F7CC6800DA39E9 /* LoginView.swift in Sources */,
 				09A7DD7728F7C76C00DA39E9 /* Persistence.swift in Sources */,
+				092262942906447300ADF609 /* Migrator.swift in Sources */,
 				09A7DD7028F7C76A00DA39E9 /* ContentView.swift in Sources */,
 				09A7DD8728FCF7AB00DA39E9 /* TextField.swift in Sources */,
 				09A7DD7A28F7C76C00DA39E9 /* testMindX.xcdatamodeld in Sources */,

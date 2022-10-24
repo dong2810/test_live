@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 final class UserModel: Object, ObjectKeyIdentifiable {
-    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var username: String
     @Persisted var fullname: String
     @Persisted var email: String
