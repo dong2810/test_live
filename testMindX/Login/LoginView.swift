@@ -43,7 +43,7 @@ extension LoginView {
     
     var inputView: some View {
         VStack(spacing: 10) {
-            TextFieldCommon(image: "ic_mail", title: "", placeholder: "Email", text: $email)
+            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Password", text: $password)
             
             Button {

@@ -14,6 +14,7 @@
 		0922628F290158C300ADF609 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0922628E290158C300ADF609 /* Realm */; };
 		09226291290158C300ADF609 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 09226290290158C300ADF609 /* RealmSwift */; };
 		092262942906447300ADF609 /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092262932906447300ADF609 /* Migrator.swift */; };
+		097053222911219100095648 /* TextInputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097053212911219100095648 /* TextInputStyle.swift */; };
 		09A7DD6E28F7C76A00DA39E9 /* testMindXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7DD6D28F7C76A00DA39E9 /* testMindXApp.swift */; };
 		09A7DD7028F7C76A00DA39E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7DD6F28F7C76A00DA39E9 /* ContentView.swift */; };
 		09A7DD7228F7C76C00DA39E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A7DD7128F7C76C00DA39E9 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		0922628728FFB8B200ADF609 /* ListUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserView.swift; sourceTree = "<group>"; };
 		0922628A28FFDE9200ADF609 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		092262932906447300ADF609 /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
+		097053212911219100095648 /* TextInputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputStyle.swift; sourceTree = "<group>"; };
 		09A7DD6A28F7C76A00DA39E9 /* testMindX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testMindX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A7DD6D28F7C76A00DA39E9 /* testMindXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testMindXApp.swift; sourceTree = "<group>"; };
 		09A7DD6F28F7C76A00DA39E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		097053202911217F00095648 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				097053212911219100095648 /* TextInputStyle.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		09A7DD6128F7C76A00DA39E9 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		09A7DD6C28F7C76A00DA39E9 /* testMindX */ = {
 			isa = PBXGroup;
 			children = (
+				097053202911217F00095648 /* Extensions */,
 				0922629229024F2100ADF609 /* Utils */,
 				0922628928FFDDC200ADF609 /* Model */,
 				0922628628FFB88000ADF609 /* Home */,
@@ -226,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097053222911219100095648 /* TextInputStyle.swift in Sources */,
 				09A7DD8528F7CC6800DA39E9 /* LoginView.swift in Sources */,
 				09A7DD7728F7C76C00DA39E9 /* Persistence.swift in Sources */,
 				092262942906447300ADF609 /* Migrator.swift in Sources */,

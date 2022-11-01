@@ -52,8 +52,8 @@ extension RegisterView {
     
     var textInput: some View {
         VStack(alignment: .center, spacing: 10) {
-            TextFieldCommon(image: "ic_user", title: "", placeholder: "Username", text: $username)
-            TextFieldCommon(image: "ic_mail", title: "", placeholder: "Email", text: $email)
+            TextFieldCommon(image: "ic_user", warning: "", placeholder: "Username", text: $username)
+            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Password", text: $password)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Confirm Password", text: $password)
         }
