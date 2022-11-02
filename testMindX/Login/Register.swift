@@ -10,12 +10,14 @@ import RealmSwift
 
 struct RegisterView: View {
     @Environment(\.presentationMode) private var presentationMode
+    @ObservedResults(UserModel.self) var userLists
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isNext: Bool = false
+    @Binding var emailStyle: TextInputStyle
     
-    @ObservedResults(UserModel.self) var userLists
+    @ObservedResults(UserModel.self) var userList
     
     var body: some View {
         VStack {
@@ -34,7 +36,7 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        RegisterView(emailStyle: .constant(.error(message: "Test")))
     }
 }
 
@@ -52,15 +54,19 @@ extension RegisterView {
     
     var textInput: some View {
         VStack(alignment: .center, spacing: 10) {
-            TextFieldCommon(image: "ic_user", warning: "", placeholder: "Username", text: $username)
-            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email)
+            TextFieldCommon(image: "ic_user", warning: "", placeholder: "Username", text: $username, inputStyle: $emailStyle)
+            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email, inputStyle: $emailStyle)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Password", text: $password)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Confirm Password", text: $password)
+            
+            ForEach(userList, id: \.id) { item in
+                Text(item.username)
+            }
         }
     }
     
     var signUpButton: some View {
-        NavigationLink(destination: LoginView(), isActive: $isNext) {
+        NavigationLink(destination: LoginView(emailStyle: $emailStyle), isActive: $isNext) {
             Button {
                 let userList = UserModel()
                 userList.username = username
@@ -78,5 +84,9 @@ extension RegisterView {
             .background(Color.black)
             .cornerRadius(5)
         }
+    }
+    
+    func checkValid() {
+        
     }
 }

@@ -14,6 +14,7 @@ struct LoginView: View {
     @State private var isForgot: Bool = false
     @State private var isNext: Bool = false
     @State private var isRegister: Bool = false
+    @Binding var emailStyle: TextInputStyle
     
 	// MARK: - Body
     var body: some View {
@@ -43,7 +44,7 @@ extension LoginView {
     
     var inputView: some View {
         VStack(spacing: 10) {
-            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email)
+            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email, inputStyle: $emailStyle)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Password", text: $password)
             
             Button {
@@ -75,7 +76,7 @@ extension LoginView {
     var registerButton: some View {
         HStack {
             Text("Don't have an Account?")
-            NavigationLink(destination: RegisterView(), isActive: $isRegister) {
+            NavigationLink(destination: RegisterView(emailStyle: $emailStyle), isActive: $isRegister) {
                 Button("Create now") {
                     isRegister.toggle()
                 }
@@ -90,6 +91,6 @@ extension LoginView {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(emailStyle: .constant(.error(message: "Test")))
     }
 }
