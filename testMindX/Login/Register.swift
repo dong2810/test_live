@@ -11,13 +11,14 @@ import RealmSwift
 struct RegisterView: View {
     @Environment(\.presentationMode) private var presentationMode
     @ObservedResults(UserModel.self) var userLists
+    let userList = UserModel()
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isNext: Bool = false
+    @State private var isDuplicate: Bool = false
+    @State private var notify: String = ""
     @Binding var emailStyle: TextInputStyle
-    
-    @ObservedResults(UserModel.self) var userList
     
     var body: some View {
         VStack {
@@ -58,20 +59,21 @@ extension RegisterView {
             TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email, inputStyle: $emailStyle)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Password", text: $password)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Confirm Password", text: $password)
-            
-            ForEach(userList, id: \.id) { item in
-                Text(item.username)
-            }
         }
     }
     
     var signUpButton: some View {
         NavigationLink(destination: LoginView(emailStyle: $emailStyle), isActive: $isNext) {
             Button {
-                let userList = UserModel()
                 userList.username = username
                 userList.email = email
                 userList.password = password
+                
+                if let _ = userLists.first(where: {
+                    $0.username == userList.username
+                }) {
+                    return
+                }
                 $userLists.append(userList)
                 
                 isNext.toggle()
@@ -83,10 +85,7 @@ extension RegisterView {
             .frame(maxWidth: .infinity, maxHeight: 40)
             .background(Color.black)
             .cornerRadius(5)
+            .disabled(self.username.isEmpty || self.password.isEmpty)
         }
-    }
-    
-    func checkValid() {
-        
     }
 }

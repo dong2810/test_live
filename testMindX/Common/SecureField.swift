@@ -27,7 +27,7 @@ public struct SecureFieldCommon: View {
         HStack(alignment: .center) {
             Image(image)
                 .padding(.leading, 5)
-            TextField(placeholder, text: $text)
+            SecureField(placeholder, text: $text)
                 .foregroundColor(Color.black)
                 .font(.system(size: 13))
             Button {
