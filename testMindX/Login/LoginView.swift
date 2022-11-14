@@ -83,8 +83,6 @@ extension LoginView {
                     isRegister.toggle()
                 }
             }
-            
-
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
         .font(.system(size: 15))

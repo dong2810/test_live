@@ -15,6 +15,7 @@ struct RegisterView: View {
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+	@State private var showAlert = false
     @State private var isNext: Bool = false
     @State private var isBlank: Bool = false
     @State private var isDuplicate: Bool = false
@@ -33,6 +34,9 @@ struct RegisterView: View {
         }
         .navigationBarBackButtonHidden(true)
         .padding(.horizontal, 16)
+		.alert(isPresented: $showAlert) {
+			Alert(title: Text(notify), message: Text(""), dismissButton: .default(Text("OK")))
+		}
     }
 }
 
@@ -69,21 +73,28 @@ extension RegisterView {
                 userList.username = username
                 userList.email = email
                 userList.password = password
-                
-                if let _ = userLists.first(where: {
-                    $0.username == userList.username
-                }) {
-                    return
-                }
-                $userLists.append(userList)
+
+				self.isDuplicate = false
+//				if let _ = (userLists.first(where: {
+//					$0.username == userList.username
+//				}) != nil) {
+//					self.isDuplicate.toggle()
+//					notify = "Username or password has been existed"
+//                }
+
+				if (userList.username.contains(username)) {
+					self.isDuplicate.toggle()
+					notify = "Username or password has been existed"
+				} else {
+					$userLists.append(userList)
+				}
+				showAlert.toggle()
+//                $userLists.append(userList)
                 isNext.toggle()
             } label: {
                 Text("SIGN UP")
                     .foregroundColor(Color.white)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
-            .alert(isPresented: $isBlank) {
-                Alert(title: Text(notify), message: Text(""), dismissButton: .default(Text("OK")))
             }
             .frame(maxWidth: .infinity, maxHeight: 40)
             .background(Color.black)
