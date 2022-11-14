@@ -12,15 +12,15 @@ public struct TextFieldCommon: View {
     private var warning: String
     private var placeholder: String
     @Binding var text: String
-    @Binding var inputStyle: TextInputStyle
+//    @Binding var inputStyle: TextInputStyle
 
     // MARK: - Init
-    public init(image: String, warning: String, placeholder: String, text: Binding<String>, inputStyle: Binding<TextInputStyle>) {
+    public init(image: String, warning: String, placeholder: String, text: Binding<String>) {
         self.image = image
         self.warning = warning
         self.placeholder = placeholder
         self._text = text
-        self._inputStyle = inputStyle
+//        self._inputStyle = inputStyle
     }
     
     // MARK: - Body
@@ -38,31 +38,31 @@ public struct TextFieldCommon: View {
                         .stroke(Color.gray.opacity(0.5)))
             .shadow(color: Color.gray, radius: 1, x: 1, y: 1)
             
-            if needShowNotifiyMessage {
-                Text(notifyMessage)
-                    .foregroundColor(Color.red)
-                    .font(.system(size: 12))
-            }
+//            if needShowNotifiyMessage {
+//                Text(notifyMessage)
+//                    .foregroundColor(Color.red)
+//                    .font(.system(size: 12))
+//            }
         }
     }
 }
 
 struct TextFieldCommon_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldCommon(image: "ic_mail", warning: "Error", placeholder: "Username", text: .constant("Test"), inputStyle: .constant(.error(message: "Error")))
+        TextFieldCommon(image: "ic_mail", warning: "Error", placeholder: "Username", text: .constant("Test"))
     }
 }
 
-extension TextFieldCommon {
-    var needShowNotifiyMessage: Bool {
-            switch inputStyle {
-            case .error, .success: return true
-            }
-        }
-    
-    var notifyMessage: String {
-        switch inputStyle {
-        case .error(let message), .success(let message): return message
-        }
-    }
-}
+//extension TextFieldCommon {
+//    var needShowNotifiyMessage: Bool {
+//            switch inputStyle {
+//            case .error, .success: return true
+//            }
+//        }
+//
+//    var notifyMessage: String {
+//        switch inputStyle {
+//        case .error(let message), .success(let message): return message
+//        }
+//    }
+//}

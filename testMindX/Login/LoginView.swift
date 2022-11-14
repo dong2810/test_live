@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct LoginView: View {
+    let app = App(id: "ENTER_APP_ID")
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isForgot: Bool = false
@@ -44,11 +45,12 @@ extension LoginView {
     
     var inputView: some View {
         VStack(spacing: 10) {
-            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email, inputStyle: $emailStyle)
+            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Password", text: $password)
             
             Button {
                 isForgot.toggle()
+                
             } label: {
                 Text("Forgot password?")
                     .foregroundColor(Color.black.opacity(0.8))

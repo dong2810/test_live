@@ -16,6 +16,7 @@ struct RegisterView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isNext: Bool = false
+    @State private var isBlank: Bool = false
     @State private var isDuplicate: Bool = false
     @State private var notify: String = ""
     @Binding var emailStyle: TextInputStyle
@@ -37,7 +38,7 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(emailStyle: .constant(.error(message: "Test")))
+            RegisterView(emailStyle: .constant(.error(message: "")))
     }
 }
 
@@ -55,8 +56,8 @@ extension RegisterView {
     
     var textInput: some View {
         VStack(alignment: .center, spacing: 10) {
-            TextFieldCommon(image: "ic_user", warning: "", placeholder: "Username", text: $username, inputStyle: $emailStyle)
-            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email, inputStyle: $emailStyle)
+            TextFieldCommon(image: "ic_user", warning: "", placeholder: "Username", text: $username)
+            TextFieldCommon(image: "ic_mail", warning: "", placeholder: "Email", text: $email)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Password", text: $password)
             SecureFieldCommon(image: "ic_lock", title: "", placeholder: "Confirm Password", text: $password)
         }
@@ -75,17 +76,23 @@ extension RegisterView {
                     return
                 }
                 $userLists.append(userList)
-                
                 isNext.toggle()
             } label: {
                 Text("SIGN UP")
                     .foregroundColor(Color.white)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            .alert(isPresented: $isBlank) {
+                Alert(title: Text(notify), message: Text(""), dismissButton: .default(Text("OK")))
+            }
             .frame(maxWidth: .infinity, maxHeight: 40)
             .background(Color.black)
             .cornerRadius(5)
             .disabled(self.username.isEmpty || self.password.isEmpty)
         }
+    }
+    
+    var checkBlank: Bool {
+        username.isEmpty || password.isEmpty == isBlank
     }
 }
